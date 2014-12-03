@@ -31,5 +31,24 @@ namespace Tamagochi
             HungerBar.label1.Content = "Hunger";
             labelMoney.Content = money + "$";
         }
+
+        private void MoodButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (money >= 10)
+            {
+                this.Visibility = System.Windows.Visibility.Hidden;
+                ClickGame.MainWindow m = new ClickGame.MainWindow();
+                m.Closed += moodClosed;
+                m.Show();
+                money -= 10;
+                labelMoney.Content = money + "$";
+            }
+            else MessageBox.Show("Not enough gold! You need 10!");
+        }
+        private void moodClosed(object sender, EventArgs e)
+        {
+            MoodBar.progressBar1.Value += ((ClickGame.MainWindow)sender).score;
+            this.Visibility = System.Windows.Visibility.Visible;
+        }
     }
 }

@@ -116,6 +116,12 @@
   <ItemGroup>
     <Resource Include="Images\537c645bb7a2ade8be67877a1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClickGame\ClickGame.csproj">
+      <Project>{1330B160-169B-403D-9E90-6CE606C71024}</Project>
+      <Name>ClickGame</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
